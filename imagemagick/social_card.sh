@@ -7,6 +7,10 @@
 
 set -e
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=brand_fonts.sh
+source "$SCRIPT_DIR/brand_fonts.sh"
+
 if [[ $# -lt 4 ]]; then
     echo "Usage: $0 <icon_image> <product_name> <tagline> <output.png>"
     echo "Example: $0 icon.png 'Phenotype' 'Beautiful asset automation' card.png"
@@ -96,7 +100,7 @@ magick "$TMPDIR/bg_accent.png" \
 echo "Adding text layers..."
 
 magick "$TMPDIR/with_icon.png" \
-    -font "Arial-Bold" \
+    -font "${PHENO_FONT_BOLD}" \
     -pointsize 72 \
     -fill "$TEAL" \
     -gravity NorthWest \

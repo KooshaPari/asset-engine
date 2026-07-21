@@ -8,6 +8,10 @@
 
 set -e
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=brand_fonts.sh
+source "$SCRIPT_DIR/brand_fonts.sh"
+
 if [[ $# -lt 4 ]]; then
     echo "Usage: $0 <icon_image> <headline> <description> <output.png>"
     echo "Example: $0 icon.png 'Asset Automation' 'Create branded assets instantly' banner.png"
@@ -91,12 +95,12 @@ magick "$TMPDIR/bg_with_glow.png" \
 echo "Adding text layers..."
 
 magick "$TMPDIR/with_icon.png" \
-    -font "Arial-Bold" \
+    -font "${PHENO_FONT_BOLD}" \
     -pointsize 80 \
     -fill "$TEAL" \
     -gravity West \
     -annotate +60+-100 "$HEADLINE" \
-    -font "Arial" \
+    -font "${PHENO_FONT_REGULAR}" \
     -pointsize 48 \
     -fill "$FROST" \
     -annotate +60+40 "$DESCRIPTION" \
