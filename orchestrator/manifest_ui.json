@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "description": "Phenotype UI pack — ImageMagick/FFmpeg only (no Blender)",
+  "assets": [
+    {
+      "id": "phenotype_favicon",
+      "type": "favicon",
+      "leg": "imagemagick",
+      "description": "Multi-res favicon set from base icon",
+      "input": { "path": "../out/ui-pack-2026-07-21/icons/phenotype_icon.png" },
+      "output": { "path": "../out/ui-pack-2026-07-21/favicons/phenotype.ico", "type": "image/x-icon" }
+    },
+    {
+      "id": "phenotype_social",
+      "type": "social_card",
+      "leg": "imagemagick",
+      "description": "1200×630 OG / social card",
+      "input": { "path": "../out/ui-pack-2026-07-21/icons/phenotype_icon.png" },
+      "output": { "path": "../out/ui-pack-2026-07-21/banners/og_1200x630.png", "type": "image/png" },
+      "params": {
+        "productName": "Phenotype",
+        "tagline": "Beautiful asset automation for teams"
+      }
+    },
+    {
+      "id": "phenotype_hero",
+      "type": "feature_banner",
+      "leg": "imagemagick",
+      "description": "1920×600 landing hero",
+      "input": { "path": "../out/ui-pack-2026-07-21/icons/phenotype_icon.png" },
+      "output": { "path": "../out/ui-pack-2026-07-21/banners/hero_1920x600.png", "type": "image/png" },
+      "params": {
+        "headline": "Asset Automation",
+        "description": "Create beautiful branded assets instantly"
+      }
+    },
+    {
+      "id": "phenotype_intro",
+      "type": "brand_intro",
+      "leg": "ffmpeg",
+      "description": "3s brand intro animation",
+      "input": { "path": "../out/ui-pack-2026-07-21/icons/phenotype_icon.png" },
+      "output": { "path": "../out/ui-pack-2026-07-21/video/brand_intro.mp4", "type": "video/mp4" },
+      "params": { "productName": "Phenotype", "duration": 3, "fps": 30 }
+    }
+  ]
+}

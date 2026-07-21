@@ -39,6 +39,17 @@ Used in all text operations to maintain visual consistency:
 
 ## Usage
 
+### Batch UI Pack (ImageMagick + FFmpeg, no Blender)
+
+Generates favicons, banners, empty states, and optional brand intro video in one run:
+
+```bash
+./batch_ui_pack.sh ../out/ui-pack-2026-07-21 P
+# Creates MANIFEST.md + icons/, favicons/, banners/, empty-states/, video/
+```
+
+Supporting scripts: `generate_base_icon.sh`, `dashboard_banner.sh`, `empty_state.sh`, `brand_fonts.sh`.
+
 ### Multi-Res Favicon Generation
 
 **Input**: 512×512 PNG (Blender output)
